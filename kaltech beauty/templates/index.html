@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kaltech Beauty</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Kaltech Beauty</h1>
+        <div class="upload-section">
+            <h2>Upload an Image</h2>
+            <form action="/upload" method="post" enctype="multipart/form-data">
+                <input type="file" name="file" />
+                <input type="submit" value="Upload" />
+            </form>
+        </div>
+
+        {% if img1 and img2 %}
+        <div class="comparison-section">
+            <h2>Compare and Vote!</h2>
+            <form action="/vote" method="post">
+                <div class="image-container">
+                    <div class="image-box">
+                        <img src="{{ url_for('uploads', filename=img1) }}" alt="Image 1" />
+                        <button name="image" value="{{ img1 }}">Vote</button>
+                    </div>
+                    <div class="image-box">
+                        <img src="{{ url_for('uploads', filename=img2) }}" alt="Image 2" />
+                        <button name="image" value="{{ img2 }}">Vote</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        {% endif %}
+
+        <div class="top-images">
+            <h2>Top Images</h2>
+            <ol>
+                {% for img, count in top_images %}
+                <li>
+                    <img src="{{ url_for('uploads', filename=img) }}" alt="{{ img }}" />
+                    <span>{{ count }} votes</span>
+                </li>
+                {% endfor %}
+            </ol>
+        </div>
+    </div>
+</body>
+</html>

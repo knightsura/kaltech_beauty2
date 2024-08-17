@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f4f4f4;
+}
+
+.container {
+    text-align: center;
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.upload-section, .comparison-section, .top-images {
+    margin-bottom: 30px;
+}
+
+.upload-section h2 {
+    margin-bottom: 10px;
+}
+
+.comparison-section h2 {
+    margin-bottom: 20px;
+}
+
+.image-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.image-box {
+    text-align: center;
+}
+
+.image-box img {
+    max-width: 300px;
+    max-height: 300px;
+    margin-bottom: 10px;
+}
+
+.top-images {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #fff;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.top-images h2 {
+    margin: 0 0 10px;
+}
+
+.top-images img {
+    max-width: 100px;
+    max-height: 100px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.top-images span {
+    font-size: 16px;
+    vertical-align: middle;
+}
